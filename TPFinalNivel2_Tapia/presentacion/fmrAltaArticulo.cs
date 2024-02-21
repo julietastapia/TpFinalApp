@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Dominio;
 using Negocio;
 using System.Configuration;
+using System.Net.NetworkInformation;
 
 
 namespace presentacion
@@ -35,13 +36,35 @@ namespace presentacion
         {
             Close();
         }
-
+        private bool validarCampos()
+        {
+            if(string.IsNullOrEmpty(txtCodigo.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtPrecio.Text))
+            {
+                lblCodigoObligatorio.Text = "*Debes cargar el código";
+                lblNombreObligatorio.Text = "*Debes cargar el nombre";
+                lblPrecioObligatorio.Text = "*Debes cargar el precio";
+                lblMarcaObligatoria.Text = "*Debes cargar la marca";
+                lblCategoriaObligatoria.Text = "*Debes cargar la categoría";
+                return true;
+            }
+         
+            if (!(soloNumeros(txtPrecio.Text)))
+            {
+                lblPrecioObligatorio.Text = "Sólo números para cargar el precio";
+                return true;
+            }
+            return false;
+        }
         private void btnAceptarNuevo_Click(object sender, EventArgs e)
         {
             ArticulosNegocio negocio = new ArticulosNegocio();
 
             try
             {
+                if (validarCampos())
+                    return;
+
+
                 if (articulo == null)
                     articulo = new Articulos();
 
@@ -67,14 +90,23 @@ namespace presentacion
                 if(archivo != null && !(txtUrlImagen.Text.Contains("http")))
                     File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
 
-
-                Close();
+                 Close();
                 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                    return false;
+            }
+            return true;
         }
 
         private void frmAltaArticulo_Load(object sender, EventArgs e)
@@ -102,6 +134,8 @@ namespace presentacion
                     cboMarca.SelectedValue = articulo.Marcas.Id;
                     cboCategoria.SelectedValue = articulo.Categoria.IdCategoria;
                 }
+
+                
             }
             catch (Exception ex)
             {
@@ -138,5 +172,6 @@ namespace presentacion
                 File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
             }
         }
+       
     }
 }

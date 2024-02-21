@@ -46,6 +46,11 @@
             this.btnCancelarNuevo = new System.Windows.Forms.Button();
             this.pboxArticulos = new System.Windows.Forms.PictureBox();
             this.btnAgregarImagen = new System.Windows.Forms.Button();
+            this.lblCodigoObligatorio = new System.Windows.Forms.Label();
+            this.lblNombreObligatorio = new System.Windows.Forms.Label();
+            this.lblPrecioObligatorio = new System.Windows.Forms.Label();
+            this.lblMarcaObligatoria = new System.Windows.Forms.Label();
+            this.lblCategoriaObligatoria = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pboxArticulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,17 +58,17 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(52, 28);
+            this.lblCodigo.Location = new System.Drawing.Point(53, 39);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(62, 19);
             this.lblCodigo.TabIndex = 0;
-            this.lblCodigo.Text = "Codigo:";
+            this.lblCodigo.Text = "Código:";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(44, 72);
+            this.lblNombre.Location = new System.Drawing.Point(45, 85);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(69, 19);
             this.lblNombre.TabIndex = 1;
@@ -73,16 +78,16 @@
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(21, 113);
+            this.lblDescripcion.Location = new System.Drawing.Point(22, 134);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(93, 19);
             this.lblDescripcion.TabIndex = 2;
-            this.lblDescripcion.Text = "Descripcion:";
+            this.lblDescripcion.Text = "Descripción:";
             // 
             // txtCodigo
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(120, 25);
+            this.txtCodigo.Location = new System.Drawing.Point(120, 31);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(225, 27);
             this.txtCodigo.TabIndex = 0;
@@ -90,7 +95,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(120, 69);
+            this.txtNombre.Location = new System.Drawing.Point(119, 82);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(226, 27);
             this.txtNombre.TabIndex = 1;
@@ -98,7 +103,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(120, 110);
+            this.txtDescripcion.Location = new System.Drawing.Point(119, 131);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(226, 27);
             this.txtDescripcion.TabIndex = 2;
@@ -108,7 +113,7 @@
             this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMarca.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMarca.FormattingEnabled = true;
-            this.cboMarca.Location = new System.Drawing.Point(120, 151);
+            this.cboMarca.Location = new System.Drawing.Point(121, 172);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(226, 27);
             this.cboMarca.TabIndex = 3;
@@ -118,7 +123,7 @@
             this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategoria.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(120, 195);
+            this.cboCategoria.Location = new System.Drawing.Point(119, 222);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(226, 27);
             this.cboCategoria.TabIndex = 4;
@@ -127,7 +132,7 @@
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.Location = new System.Drawing.Point(52, 159);
+            this.lblMarca.Location = new System.Drawing.Point(59, 175);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(56, 19);
             this.lblMarca.TabIndex = 8;
@@ -137,17 +142,17 @@
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(33, 198);
+            this.lblCategoria.Location = new System.Drawing.Point(35, 225);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(80, 19);
             this.lblCategoria.TabIndex = 9;
-            this.lblCategoria.Text = "Categoria:";
+            this.lblCategoria.Text = "Categoría:";
             // 
             // lblUrlImagen
             // 
             this.lblUrlImagen.AutoSize = true;
             this.lblUrlImagen.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUrlImagen.Location = new System.Drawing.Point(25, 240);
+            this.lblUrlImagen.Location = new System.Drawing.Point(27, 272);
             this.lblUrlImagen.Name = "lblUrlImagen";
             this.lblUrlImagen.Size = new System.Drawing.Size(88, 19);
             this.lblUrlImagen.TabIndex = 10;
@@ -157,7 +162,7 @@
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(57, 290);
+            this.lblPrecio.Location = new System.Drawing.Point(57, 315);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(56, 19);
             this.lblPrecio.TabIndex = 11;
@@ -166,7 +171,7 @@
             // txtUrlImagen
             // 
             this.txtUrlImagen.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUrlImagen.Location = new System.Drawing.Point(120, 237);
+            this.txtUrlImagen.Location = new System.Drawing.Point(119, 269);
             this.txtUrlImagen.Name = "txtUrlImagen";
             this.txtUrlImagen.Size = new System.Drawing.Size(226, 27);
             this.txtUrlImagen.TabIndex = 5;
@@ -175,7 +180,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(120, 282);
+            this.txtPrecio.Location = new System.Drawing.Point(119, 312);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(226, 27);
             this.txtPrecio.TabIndex = 6;
@@ -214,7 +219,7 @@
             // btnAgregarImagen
             // 
             this.btnAgregarImagen.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarImagen.Location = new System.Drawing.Point(360, 237);
+            this.btnAgregarImagen.Location = new System.Drawing.Point(361, 268);
             this.btnAgregarImagen.Name = "btnAgregarImagen";
             this.btnAgregarImagen.Size = new System.Drawing.Size(49, 27);
             this.btnAgregarImagen.TabIndex = 13;
@@ -223,11 +228,66 @@
             this.btnAgregarImagen.UseVisualStyleBackColor = true;
             this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
             // 
+            // lblCodigoObligatorio
+            // 
+            this.lblCodigoObligatorio.AutoSize = true;
+            this.lblCodigoObligatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoObligatorio.ForeColor = System.Drawing.Color.Red;
+            this.lblCodigoObligatorio.Location = new System.Drawing.Point(117, 61);
+            this.lblCodigoObligatorio.Name = "lblCodigoObligatorio";
+            this.lblCodigoObligatorio.Size = new System.Drawing.Size(0, 13);
+            this.lblCodigoObligatorio.TabIndex = 14;
+            // 
+            // lblNombreObligatorio
+            // 
+            this.lblNombreObligatorio.AutoSize = true;
+            this.lblNombreObligatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreObligatorio.ForeColor = System.Drawing.Color.Red;
+            this.lblNombreObligatorio.Location = new System.Drawing.Point(117, 112);
+            this.lblNombreObligatorio.Name = "lblNombreObligatorio";
+            this.lblNombreObligatorio.Size = new System.Drawing.Size(0, 13);
+            this.lblNombreObligatorio.TabIndex = 15;
+            // 
+            // lblPrecioObligatorio
+            // 
+            this.lblPrecioObligatorio.AutoSize = true;
+            this.lblPrecioObligatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecioObligatorio.ForeColor = System.Drawing.Color.Red;
+            this.lblPrecioObligatorio.Location = new System.Drawing.Point(117, 342);
+            this.lblPrecioObligatorio.Name = "lblPrecioObligatorio";
+            this.lblPrecioObligatorio.Size = new System.Drawing.Size(0, 13);
+            this.lblPrecioObligatorio.TabIndex = 16;
+            // 
+            // lblMarcaObligatoria
+            // 
+            this.lblMarcaObligatoria.AutoSize = true;
+            this.lblMarcaObligatoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarcaObligatoria.ForeColor = System.Drawing.Color.Red;
+            this.lblMarcaObligatoria.Location = new System.Drawing.Point(118, 202);
+            this.lblMarcaObligatoria.Name = "lblMarcaObligatoria";
+            this.lblMarcaObligatoria.Size = new System.Drawing.Size(0, 13);
+            this.lblMarcaObligatoria.TabIndex = 17;
+            // 
+            // lblCategoriaObligatoria
+            // 
+            this.lblCategoriaObligatoria.AutoSize = true;
+            this.lblCategoriaObligatoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoriaObligatoria.ForeColor = System.Drawing.Color.Red;
+            this.lblCategoriaObligatoria.Location = new System.Drawing.Point(117, 253);
+            this.lblCategoriaObligatoria.Name = "lblCategoriaObligatoria";
+            this.lblCategoriaObligatoria.Size = new System.Drawing.Size(0, 13);
+            this.lblCategoriaObligatoria.TabIndex = 18;
+            // 
             // frmAltaArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 484);
+            this.Controls.Add(this.lblCategoriaObligatoria);
+            this.Controls.Add(this.lblMarcaObligatoria);
+            this.Controls.Add(this.lblPrecioObligatorio);
+            this.Controls.Add(this.lblNombreObligatorio);
+            this.Controls.Add(this.lblCodigoObligatorio);
             this.Controls.Add(this.btnAgregarImagen);
             this.Controls.Add(this.pboxArticulos);
             this.Controls.Add(this.btnCancelarNuevo);
@@ -276,5 +336,10 @@
         private System.Windows.Forms.Button btnCancelarNuevo;
         private System.Windows.Forms.PictureBox pboxArticulos;
         private System.Windows.Forms.Button btnAgregarImagen;
+        private System.Windows.Forms.Label lblCodigoObligatorio;
+        private System.Windows.Forms.Label lblNombreObligatorio;
+        private System.Windows.Forms.Label lblPrecioObligatorio;
+        private System.Windows.Forms.Label lblMarcaObligatoria;
+        private System.Windows.Forms.Label lblCategoriaObligatoria;
     }
 }

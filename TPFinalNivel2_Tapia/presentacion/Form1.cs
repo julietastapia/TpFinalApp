@@ -177,7 +177,7 @@ namespace presentacion
             }
             return false;
         }
-        private bool soloNumeros(string cadena)
+         private bool soloNumeros(string cadena)
         {
             foreach (char caracter in cadena)
             {
