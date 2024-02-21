@@ -11,12 +11,12 @@ namespace Negocio
     {
         public List<Categorias> listar()
         {
-            List<Categorias> lista = new  List<Categorias>();
+            List<Categorias> lista = new List<Categorias>();
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.setearConsulta("select Id, Descripcion from CATEGORIAS");
+                datos.setearConsulta("SELECT Id, Descripcion FROM CATEGORIAS");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -26,24 +26,17 @@ namespace Negocio
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
 
                     lista.Add(aux);
-
                 }
-
-
                 return lista;
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                throw new Exception(ex.Message);
             }
             finally
             {
                 datos.cerrarConexion();
             }
-            
         }
-      
-
     }
 }

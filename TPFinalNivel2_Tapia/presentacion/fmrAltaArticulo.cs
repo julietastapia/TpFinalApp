@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Negocio;
+using System.Configuration;
 
 
 namespace presentacion
@@ -16,10 +18,12 @@ namespace presentacion
     public partial class frmAltaArticulo : Form
     {
         private Articulos articulo = null;
+
         public frmAltaArticulo()
         {
             InitializeComponent();
         }
+        private OpenFileDialog archivo = null;
         public frmAltaArticulo(Articulos articulo)
         {
             InitializeComponent();
@@ -34,7 +38,6 @@ namespace presentacion
 
         private void btnAceptarNuevo_Click(object sender, EventArgs e)
         {
-           
             ArticulosNegocio negocio = new ArticulosNegocio();
 
             try
@@ -46,35 +49,32 @@ namespace presentacion
                 articulo.Nombre = txtNombre.Text;
                 articulo.Descripcion = txtDescripcion.Text;
                 articulo.ImagenUrl = txtUrlImagen.Text;
-                articulo.Precio = int.Parse(txtPrecio.Text);
-                articulo.Marcas =(Marca)cboMarca.SelectedItem;
-                articulo.Categoria =(Categorias)cboCategoria.SelectedItem;
+                articulo.Precio = decimal.Parse(txtPrecio.Text);
+                articulo.Marcas = (Marca)cboMarca.SelectedItem;
+                articulo.Categoria = (Categorias)cboCategoria.SelectedItem;
 
-                if(articulo.Id != 0)
+                if (articulo.Id != 0)
                 {
                     negocio.modificar(articulo);
                     MessageBox.Show("Modificado exitosamente");
-
                 }
                 else
                 {
                     negocio.agregar(articulo);
                     MessageBox.Show("Agregado exitosamente");
-
                 }
 
+                if(archivo != null && !(txtUrlImagen.Text.Contains("http")))
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
+
+
                 Close();
+                
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
-
-
-
-
-          
         }
 
         private void frmAltaArticulo_Load(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace presentacion
                 cboCategoria.ValueMember = "IdCategoria";
                 cboCategoria.DisplayMember = "Descripcion";
 
-                if(articulo != null)
+                if (articulo != null)
                 {
                     txtCodigo.Text = articulo.Codigo;
                     txtNombre.Text = articulo.Nombre;
@@ -102,16 +102,11 @@ namespace presentacion
                     cboMarca.SelectedValue = articulo.Marcas.Id;
                     cboCategoria.SelectedValue = articulo.Categoria.IdCategoria;
                 }
-
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
-            
-            
         }
 
         private void txtUrlImagen_Leave(object sender, EventArgs e)
@@ -124,12 +119,23 @@ namespace presentacion
             try
             {
                 pboxArticulos.Load(imagen);
-
             }
             catch (Exception ex)
             {
-
                 pboxArticulos.Load("https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png");
+            }
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {   
+            archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg;|png|*.png";
+            if(archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtUrlImagen.Text = archivo.FileName;
+                cargarImagen(archivo.FileName);
+
+                File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
             }
         }
     }

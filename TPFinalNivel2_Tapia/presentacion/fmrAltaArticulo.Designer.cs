@@ -45,6 +45,7 @@
             this.btnAceptarNuevo = new System.Windows.Forms.Button();
             this.btnCancelarNuevo = new System.Windows.Forms.Button();
             this.pboxArticulos = new System.Windows.Forms.PictureBox();
+            this.btnAgregarImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pboxArticulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -205,16 +206,29 @@
             // 
             this.pboxArticulos.Location = new System.Drawing.Point(461, 12);
             this.pboxArticulos.Name = "pboxArticulos";
-            this.pboxArticulos.Size = new System.Drawing.Size(274, 401);
+            this.pboxArticulos.Size = new System.Drawing.Size(329, 401);
             this.pboxArticulos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxArticulos.TabIndex = 12;
             this.pboxArticulos.TabStop = false;
+            // 
+            // btnAgregarImagen
+            // 
+            this.btnAgregarImagen.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarImagen.Location = new System.Drawing.Point(360, 237);
+            this.btnAgregarImagen.Name = "btnAgregarImagen";
+            this.btnAgregarImagen.Size = new System.Drawing.Size(49, 27);
+            this.btnAgregarImagen.TabIndex = 13;
+            this.btnAgregarImagen.Tag = "";
+            this.btnAgregarImagen.Text = "+";
+            this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
             // 
             // frmAltaArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 484);
+            this.ClientSize = new System.Drawing.Size(864, 484);
+            this.Controls.Add(this.btnAgregarImagen);
             this.Controls.Add(this.pboxArticulos);
             this.Controls.Add(this.btnCancelarNuevo);
             this.Controls.Add(this.btnAceptarNuevo);
@@ -261,5 +275,6 @@
         private System.Windows.Forms.Button btnAceptarNuevo;
         private System.Windows.Forms.Button btnCancelarNuevo;
         private System.Windows.Forms.PictureBox pboxArticulos;
+        private System.Windows.Forms.Button btnAgregarImagen;
     }
 }
